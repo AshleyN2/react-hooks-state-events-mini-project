@@ -1,6 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 
 function NewTaskForm() {
+
+  const [newFields, setNewFields]=useState({
+    text:'',
+    category:'Code'
+  })
+ 
+  function handleFields(e){
+    const{name,value}=e.target
+    setNewFields({...newFields,[name]:value})
+    
+  }
+
   return (
     <form className="new-task-form">
       <label>
